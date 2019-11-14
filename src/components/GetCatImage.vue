@@ -1,7 +1,10 @@
 <template>
   <div>
+
     <button v-on:click="getCatImage()">meow!</button>
+    
     <img v-bind:src="catImage">
+
   </div>
 </template>
 

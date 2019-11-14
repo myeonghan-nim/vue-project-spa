@@ -1,9 +1,13 @@
 <template>
   <div id="app">
+
     <img alt="Vue logo" src="./assets/logo.png">
+
     <GetImage btnName="bark" @getAnimalImage="getImage"/>
     <GetImage btnName="meow" @getAnimalImage="getImage"/>
+
     <img v-bind:src="animalUrl" alt="">
+
   </div>
 </template>
 
