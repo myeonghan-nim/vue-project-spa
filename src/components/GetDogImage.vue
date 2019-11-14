@@ -1,7 +1,10 @@
 <template>
   <div>
+
     <button v-on:click="getDogImageUrl()">bark!</button>
+    
     <img v-bind:src="dogImage">
+
   </div>
 </template>
 
