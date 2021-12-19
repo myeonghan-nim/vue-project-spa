@@ -1,4 +1,4 @@
-# README
+# Project: SPA
 
 ## Project setup
 
@@ -27,14 +27,3 @@ $ npm run lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
-## API of dog and cat
-
-- Dog API
-
-    - https://dog.ceo/api/breeds/image/random
-
-- Cat API
-
-    - https://api.thecatapi.com/v1/images/search
-    
