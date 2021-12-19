@@ -1,10 +1,7 @@
 <template>
   <div>
-
     <button v-on:click="getDogImageUrl()">bark!</button>
-    
     <img v-bind:src="dogImage">
-
   </div>
 </template>
 
@@ -17,17 +14,15 @@ export default {
       dogImage: ''
     }
   },
-
   methods: {
     getDogImageUrl: function() {
       const DOG_URL = 'https://dog.ceo/api/breeds/image/random'
-
       axios.get(DOG_URL)
-        .then((response) => {
-          this.dogImage = response.data.message
+        .then((res) => {
+          this.dogImage = res.data.message
         })
-        .catch((error) => {
-          console.log(error)
+        .catch((err) => {
+          console.log(err)
         })
     }
   }
@@ -35,5 +30,4 @@ export default {
 </script>
 
 <style>
-
 </style>

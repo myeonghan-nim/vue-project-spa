@@ -1,10 +1,7 @@
 <template>
   <div>
-
-    <button v-on:click="getCatImage()">meow!</button>
-    
+    <button v-on:click="getCatImage()">CAT!</button>
     <img v-bind:src="catImage">
-
   </div>
 </template>
 
@@ -17,17 +14,15 @@ export default {
       catImage: ''
     }
   },
-
   methods: {
     getCatImage: function() {
       const CAT_URL = 'https://api.thecatapi.com/v1/images/search'
-
       axios.get(CAT_URL)
-        .then((response) => {
-          this.catImage = response.data[0].url
+        .then((res) => {
+          this.catImage = res.data[0].url
         })
-        .catch((error) => {
-          console.log(error)
+        .catch((err) => {
+          console.log(err)
         })
     }
   }
@@ -35,5 +30,4 @@ export default {
 </script>
 
 <style>
-
 </style>

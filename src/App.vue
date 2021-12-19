@@ -1,48 +1,45 @@
 <template>
   <div id="app">
-
     <img alt="Vue logo" src="./assets/logo.png">
-
-    <GetImage btnName="bark" @getAnimalImage="getImage"/>
-    <GetImage btnName="meow" @getAnimalImage="getImage"/>
-
-    <img v-bind:src="animalUrl" alt="">
-
+    <div>
+      <GetImage btnName="DOG" @getAnimalImage="getImage"/>
+      <GetImage btnName="CAT" @getAnimalImage="getImage"/>
+    </div>
+    <div>
+     <img v-bind:src="animalUrl" alt="">
+    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+
 import GetImage from './components/GetImage.vue'
 
 export default {
   name: 'app',
-
   components: {
     GetImage
   },
-
   methods: {
     getImage: function(name) {
-      if (name === 'bark') {
+      if (name === 'DOG') {
         const DOG_URL = 'https://dog.ceo/api/breeds/image/random'
-
         axios.get(DOG_URL)
-          .then((response) => {
-            this.animalUrl = response.data.message
+          .then((res) => {
+            this.animalUrl = res.data.message
           })
-          .catch((error) => {
-            console.log(error)
+          .catch((err) => {
+            console.log(err)
           })
       } else {
         const CAT_URL = 'https://api.thecatapi.com/v1/images/search'
-
         axios.get(CAT_URL)
-          .then((response) => {
-            this.animalUrl = response.data[0].url
+          .then((res) => {
+            this.animalUrl = res.data[0].url
           })
-          .catch((error) => {
-            console.log(error)
+          .catch((err) => {
+            console.log(err)
           })
       }
     }

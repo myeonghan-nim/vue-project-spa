@@ -7,11 +7,9 @@ export default {
   props: {
     btnName: String
   },
-
   data: function() {
     return {}
   },
-
   methods: {
     onAnimalImage: function() {
       this.$emit('getAnimalImage', this.btnName)
@@ -21,5 +19,4 @@ export default {
 </script>
 
 <style>
-
 </style>
